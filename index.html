@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cool Blue - Premier Cricket Team</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Montserrat:wght@700;800;900&family=Orbitron:wght@400;500;600;700;800;900&family=Righteous&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="logo.png" alt="Cool Blue Logo" class="logo-img">
+                    <h1>🏏 Cool Blue</h1>
+                </div>
+                <nav class="nav">
+                    <ul>
+                        <li><a href="#home" class="nav-link">
+                            <i class="fas fa-home nav-icon"></i>
+                            <span class="nav-text">Home</span>
+                        </a></li>
+                        <li><a href="#gallery" class="nav-link">
+                            <i class="fas fa-th-large nav-icon"></i>
+                            <span class="nav-text">Feed</span>
+                        </a></li>
+                        <li><a href="#upload" class="nav-link">
+                            <i class="fas fa-cloud-upload-alt nav-icon"></i>
+                            <span class="nav-text">Upload</span>
+                        </a></li>
+                        <li><a href="#team" class="nav-link">
+                            <i class="fas fa-users nav-icon"></i>
+                            <span class="nav-text">Team</span>
+                        </a></li>
+                    </ul>
+                    <div class="nav-actions">
+                        <button class="icon-button notification-btn" title="Notifications">
+                            <i class="fas fa-bell"></i>
+                            <span class="badge">3</span>
+                        </button>
+                        <button class="icon-button profile-btn" title="Profile">
+                            <i class="fas fa-user"></i>
+                        </button>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="badge-icon">⭐</span>
+                    <span>Champions 2024</span>
+                </div>
+                <h2 class="hero-title">Welcome to Cool Blue</h2>
+                <p class="hero-subtitle">Share your moments, celebrate victories, and connect with the team in our exclusive social platform</p>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">150+</div>
+                        <div class="stat-label">Photos</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">24</div>
+                        <div class="stat-label">Matches</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">500+</div>
+                        <div class="stat-label">Likes</div>
+                    </div>
+                </div>
+                <div class="hero-actions">
+                    <a href="#upload" class="btn btn-primary">
+                        <span class="btn-icon">📸</span>
+                        <span>Share Moment</span>
+                    </a>
+                    <a href="#gallery" class="btn btn-secondary">
+                        <span class="btn-icon">🎥</span>
+                        <span>Explore Feed</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Upload Section -->
+    <section class="upload-section" id="upload">
+        <div class="container">
+            <div class="section-header">
+                <h2>Upload Your Photos</h2>
+                <p>Share your cricket moments with the team</p>
+            </div>
+            
+            <div class="upload-card">
+                <div class="upload-area" id="uploadArea">
+                    <div class="upload-icon">📸</div>
+                    <h3>Drag & Drop Photos Here</h3>
+                    <p>or click to browse</p>
+                    <input type="file" id="fileInput" accept="image/*" multiple hidden>
+                    <button class="btn btn-primary" onclick="document.getElementById('fileInput').click()">
+                        Choose Photos
+                    </button>
+                </div>
+                
+                <div class="upload-form">
+                    <div class="logged-user-info">
+                        <div class="user-avatar">👤</div>
+                        <div class="user-details">
+                            <h4 class="logged-user-name">Logged in as: <span id="currentUser">Abdul</span></h4>
+                            <p class="auto-timestamp">Photos will be automatically timestamped</p>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="photoCaption">Caption (Optional)</label>
+                        <textarea id="photoCaption" placeholder="Add a caption to your photos..." rows="3"></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="photoCategory">Category</label>
+                        <select id="photoCategory" class="category-select">
+                            <option value="matches">🏏 Matches</option>
+                            <option value="practice">⚡ Practice</option>
+                            <option value="celebrations">🎉 Celebrations</option>
+                        </select>
+                    </div>
+                    
+                    <div id="previewContainer" class="preview-container"></div>
+                    
+                    <button class="btn btn-success btn-block" id="uploadBtn" onclick="uploadPhotos()">
+                        <span class="btn-icon">☁️</span>
+                        <span>Upload Photos</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section - Social Feed Style -->
+    <section class="gallery-section" id="gallery">
+        <div class="container">
+            <div class="section-header">
+                <h2>Team Social Feed</h2>
+                <p>Share, like, and comment on team moments</p>
+            </div>
+            
+            <div class="filter-tabs">
+                <button class="filter-btn active" onclick="filterGallery('all')">
+                    <span class="filter-icon">🌟</span> All Posts
+                </button>
+                <button class="filter-btn" onclick="filterGallery('matches')">
+                    <span class="filter-icon">🏏</span> Matches
+                </button>
+                <button class="filter-btn" onclick="filterGallery('practice')">
+                    <span class="filter-icon">⚡</span> Practice
+                </button>
+                <button class="filter-btn" onclick="filterGallery('celebrations')">
+                    <span class="filter-icon">🎉</span> Celebrations
+                </button>
+            </div>
+            
+            <div class="social-feed" id="galleryGrid">
+                <!-- Social posts will be dynamically added here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section class="achievements-section" id="achievements">
+        <div class="container">
+            <div class="section-header">
+                <div class="achievement-badge">🏆</div>
+                <h2>Hall of Glory</h2>
+                <p>Celebrating our legendary victories and milestones</p>
+            </div>
+            
+            <div class="achievements-grid">
+                <div class="achievement-card trophy-card">
+                    <div class="achievement-icon">🏆</div>
+                    <div class="achievement-content">
+                        <h3 class="achievement-title">Championship Winners</h3>
+                        <p class="achievement-year">2024</p>
+                        <p class="achievement-desc">District Champions - Undefeated Season</p>
+                    </div>
+                    <div class="achievement-shine"></div>
+                </div>
+
+                <div class="achievement-card medal-card">
+                    <div class="achievement-icon">🥇</div>
+                    <div class="achievement-content">
+                        <h3 class="achievement-title">Best Team Award</h3>
+                        <p class="achievement-year">2024</p>
+                        <p class="achievement-desc">Outstanding Performance & Sportsmanship</p>
+                    </div>
+                    <div class="achievement-shine"></div>
+                </div>
+
+                <div class="achievement-card star-card">
+                    <div class="achievement-icon">⭐</div>
+                    <div class="achievement-content">
+                        <h3 class="achievement-title">Player of the Year</h3>
+                        <p class="achievement-year">Abdul - 2024</p>
+                        <p class="achievement-desc">Most Valuable Player Recognition</p>
+                    </div>
+                    <div class="achievement-shine"></div>
+                </div>
+
+                <div class="achievement-card flame-card">
+                    <div class="achievement-icon">🔥</div>
+                    <div class="achievement-content">
+                        <h3 class="achievement-title">Winning Streak</h3>
+                        <p class="achievement-year">15 Consecutive Wins</p>
+                        <p class="achievement-desc">Record Breaking Performance</p>
+                    </div>
+                    <div class="achievement-shine"></div>
+                </div>
+
+                <div class="achievement-card crown-card">
+                    <div class="achievement-icon">👑</div>
+                    <div class="achievement-content">
+                        <h3 class="achievement-title">League Champions</h3>
+                        <p class="achievement-year">2023-2024</p>
+                        <p class="achievement-desc">Back-to-Back Championship Titles</p>
+                    </div>
+                    <div class="achievement-shine"></div>
+                </div>
+
+                <div class="achievement-card lightning-card">
+                    <div class="achievement-icon">⚡</div>
+                    <div class="achievement-content">
+                        <h3 class="achievement-title">Best Bowling Attack</h3>
+                        <p class="achievement-year">2024</p>
+                        <p class="achievement-desc">Most Wickets in Tournament History</p>
+                    </div>
+                    <div class="achievement-shine"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Members Section -->
+    <section class="team-section" id="team">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Team Members</h2>
+                <p>The champions behind our success</p>
+            </div>
+            
+            <div class="team-grid" id="teamGrid">
+                <!-- Team members will be displayed here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2025 Cool Blue Cricket Team. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="#privacy">Privacy Policy</a>
+                    <a href="#terms">Terms of Service</a>
+                    <a href="#contact">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Photo Modal -->
+    <div id="photoModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modalImage">
+        <div class="modal-caption" id="modalCaption"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
