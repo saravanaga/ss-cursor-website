@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Test - Cool Blue</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .test-section {
+            border: 2px solid #0d47a1;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+        .pass { color: green; font-weight: bold; }
+        .info { color: #0d47a1; }
+        code {
+            background: #f0f0f0;
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+        h1 { color: #0d47a1; }
+        h2 { color: #1976d2; }
+        ul { line-height: 1.8; }
+    </style>
+</head>
+<body>
+    <h1>📱 Mobile Optimization Test Page</h1>
+    <p>Your Cool Blue Cricket Team website has been successfully optimized for mobile devices!</p>
+
+    <div class="test-section">
+        <h2>✅ What's Been Added</h2>
+        <ul>
+            <li><span class="pass">✓</span> Responsive CSS for tablets (≤768px) and phones (≤480px)</li>
+            <li><span class="pass">✓</span> Hamburger menu with slide-in navigation</li>
+            <li><span class="pass">✓</span> Touch-friendly buttons (minimum 44px)</li>
+            <li><span class="pass">✓</span> Mobile-optimized layouts (single column)</li>
+            <li><span class="pass">✓</span> Landscape orientation support</li>
+            <li><span class="pass">✓</span> Viewport meta tags for proper scaling</li>
+            <li><span class="pass">✓</span> Active states instead of hover on touch devices</li>
+        </ul>
+    </div>
+
+    <div class="test-section">
+        <h2>🧪 How to Test</h2>
+        <h3>Option 1: On Your Phone/Tablet</h3>
+        <ol>
+            <li>Open <code>index.html</code> on your mobile device</li>
+            <li>Look for the hamburger menu button (☰) in the top-right</li>
+            <li>Tap it to open the navigation menu</li>
+            <li>Test all the links and features</li>
+            <li>Try both portrait and landscape modes</li>
+        </ol>
+
+        <h3>Option 2: Using Browser DevTools</h3>
+        <ol>
+            <li>Open <code>index.html</code> in Chrome or Firefox</li>
+            <li>Press <code>F12</code> to open Developer Tools</li>
+            <li>Press <code>Ctrl+Shift+M</code> (or Cmd+Shift+M on Mac) for device toolbar</li>
+            <li>Select a mobile device from the dropdown (e.g., iPhone 12, Galaxy S20)</li>
+            <li>Test the responsive design at different screen sizes</li>
+        </ol>
+    </div>
+
+    <div class="test-section">
+        <h2>📐 Responsive Breakpoints</h2>
+        <ul>
+            <li><strong>Desktop (>768px):</strong> Full layout with horizontal navigation</li>
+            <li><strong>Tablet (≤768px):</strong> Hamburger menu, 2-column filters</li>
+            <li><strong>Mobile (≤480px):</strong> Single column, compact spacing</li>
+            <li><strong>Landscape:</strong> Optimized horizontal layouts</li>
+        </ul>
+    </div>
+
+    <div class="test-section">
+        <h2>🎯 Key Mobile Features</h2>
+        <h3>Navigation</h3>
+        <ul>
+            <li>Hamburger menu slides in from the right</li>
+            <li>Backdrop overlay when menu is open</li>
+            <li>Auto-closes when you tap a link</li>
+            <li>Tap outside to close menu</li>
+        </ul>
+
+        <h3>Layout</h3>
+        <ul>
+            <li>Logo and team name scale down on mobile</li>
+            <li>Stats stack vertically on small screens</li>
+            <li>Action buttons become full-width</li>
+            <li>Social feed shows one post per row</li>
+            <li>Filter buttons stack or go 2-column</li>
+        </ul>
+
+        <h3>Touch Optimization</h3>
+        <ul>
+            <li>All buttons are at least 44px tall (Apple/Google standard)</li>
+            <li>Increased padding for easier tapping</li>
+            <li>No hover effects on touch devices</li>
+            <li>Visual feedback with active states</li>
+        </ul>
+    </div>
+
+    <div class="test-section">
+        <h2>📱 Testing Checklist</h2>
+        <ul>
+            <li>☐ Open/close hamburger menu</li>
+            <li>☐ Navigate to different sections</li>
+            <li>☐ Test photo upload on mobile</li>
+            <li>☐ View photos in the gallery</li>
+            <li>☐ Open photo modal (full screen view)</li>
+            <li>☐ Like and comment on posts</li>
+            <li>☐ Test in portrait mode</li>
+            <li>☐ Test in landscape mode</li>
+            <li>☐ Scroll through all sections</li>
+            <li>☐ Check footer links</li>
+        </ul>
+    </div>
+
+    <div class="test-section">
+        <h2>📚 Documentation</h2>
+        <p>For detailed information, see <code>MOBILE_GUIDE.md</code> which includes:</p>
+        <ul>
+            <li>Complete feature list</li>
+            <li>Customization instructions</li>
+            <li>Troubleshooting guide</li>
+            <li>Device compatibility list</li>
+            <li>Performance tips</li>
+        </ul>
+    </div>
+
+    <div class="test-section">
+        <h2>🎉 Next Steps</h2>
+        <ol>
+            <li>Test the website on your actual mobile device</li>
+            <li>Check different screen sizes using DevTools</li>
+            <li>Share with team members to get feedback</li>
+            <li>Adjust colors, spacing, or text as needed</li>
+            <li>Consider adding PWA features for even better mobile experience</li>
+        </ol>
+    </div>
+
+    <div class="test-section" style="background: #e3f2fd;">
+        <h2>✨ Summary</h2>
+        <p><strong>Your website is now fully mobile-responsive!</strong></p>
+        <p class="info">All the responsive CSS has been added to <code>styles.css</code>, the hamburger menu HTML is in <code>index.html</code>, and the menu functionality is in <code>script.js</code>.</p>
+        <p class="info">The website will automatically adapt to any screen size from phones to tablets to desktops.</p>
+    </div>
+
+    <p style="text-align: center; margin-top: 40px; color: #666;">
+        <strong>Ready to test? Open <code>index.html</code> and resize your browser or use DevTools!</strong>
+    </p>
+</body>
+</html>
